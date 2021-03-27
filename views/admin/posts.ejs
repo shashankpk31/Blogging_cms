@@ -1,0 +1,68 @@
+<% include ../partials/header.ejs %>
+
+<div class="wrapper">
+  <h1 class="text-center">All Posts</h1>
+  <div class="col-m-12 col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>Table</h3>
+        <i class="fas fa-ellipsis-h"></i>
+      </div>
+      <div class="card-content">
+        <table style="overflow-x: auto">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Title</th>
+              <th>User</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if(posts.length>0){ %> <% posts.forEach((post)=>{ %>
+            <tr>
+              <td>
+                <img
+                  src="<%= post.image %>"
+                  style="width: 12em; height: 8em"
+                  class="img-1"
+                  alt="<%= post.title %>"
+                />
+              </td>
+              <td>
+                <a href="/blog/<%= post._id %>"><%= post.title %></a>
+              </td>
+              <% users.forEach((user)=>{ %> <%
+              if(user._id.toString()===post.author.id.toString()){ %>
+              <td><%= post.author.username.toString() %></td>
+              <% } %> <% }) %>
+              <td>
+                <a
+                  class="btn-floating green btn"
+                  href="/blog/<%= post._id %>/edit"
+                  >Edit <i class="far fa-edit"></i
+                ></a>
+                <form
+                  action="/blog/<%= post._id %>?_method=delete"
+                  method="POST"
+                >
+                  <button class="btn-floating red btn">
+                    Delete <i class="fas fa-trash-alt"></i>
+                  </button>
+                </form>
+              </td>
+            </tr>
+
+            <% }) %> <% }else{ %>
+            <tr>
+              <td colspan="4">No post found</td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,49 @@
+<% include ../partials/header.ejs %>
+
+<div class="wrapper">
+  <h1 class="text-center">All Users</h1>
+  <div class="card-content">
+    <table style="overflow-x:auto;">
+      <thead>
+        <tr>
+          <th>User-image</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(users.length>0){ %> <% users.forEach((user)=>{ %>
+        <tr>
+          <td><img
+            src="<%= user.image %>"
+            style="width: 12em; height: 12em;border-radius: 50%;"
+            class="img-1"
+            alt="<%= user.username %>"
+          /></td>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.entity %></td>
+          <td>
+            <a href="/edituser/<%= user._id %>" class="btn btn-success"
+              >Edit</a
+            >
+            <a href="/user/Delete/<%= user._id %>" class="btn btn-danger"
+              >Delete</a
+            >
+          </td>
+  
+        </tr>
+        <% }) %> <% }else{ %>
+        <tr>
+          <td colspan="3">No User found</td>
+        </tr>
+  
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>

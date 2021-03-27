@@ -1,0 +1,38 @@
+<% include ../partials/header.ejs %>
+
+<div id="new-content" class="wrapper">
+  <h1>Add a new Blog Post</h1>
+  <div class="row center-align add-new-container">
+    <form action="/blog" method="POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="newTitle">Title <i class="fas fa-heading"></i></label>
+          <input type="text" name="title" id="input" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="newImage">Image Link <i class="fas fa-image"></i></label>
+          <input type="text" name="image" id="input" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="newContent" id="label"
+            >Content <i class="fas fa-file-word"></i
+          ></label>
+
+          <textarea name="content" rows="4" cols="35" id="input"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <button class="btn">Submit<i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,82 @@
+<link
+      rel="stylesheet"
+      type="text/css"
+      href="http://localhost:3000/css/profile.css"
+    />
+<%- include('partials/header'); -%>
+
+<!-- <div class="wrapper">
+  <div class="row">
+    <h1>Profile</h1>
+
+    <h2><p><%=currentUser.username %></p></h2>
+    <br />
+    <br />
+    <ul class="navbar-nav >
+    <li class="nav-item">
+      <p><%= currentUser.Age %> <strong>Age</strong></p>
+      <br />
+    </li>
+    <li class="nav-item">
+      <p><%=currentUser.email %> <strong>Email</strong></p>
+    </li>
+    <li class="nav-item">
+      <p><%= currentUser.entity %> <strong>Entity</strong></p>
+    </li>
+  </div>
+  
+</div> -->
+<div class="wrapper">
+  <div class="layout">
+    <div class="profile">
+      <div class="profile__picture"><img src=<%= currentUser.image %>  alt="image have some error"/></div>
+      <div class="profile__header">
+        <div class="profile__account">
+          <h4 class="profile__username"><%=currentUser.username %></h4>
+        </div>
+        <div class="profile__edit"><a class="profile__button" href="#">Edit Profile</a></div>
+      </div>
+      <div class="profile__stats">
+        <div class="profile__stat">
+          <div class="profile__icon profile__icon--gold"><i class="fa fa-child" aria-hidden="true"></i></div>
+          <div class="profile__value"><%=currentUser.Age %>
+            <div class="profile__key">Age</div>
+          </div>
+        </div>
+        <div class="profile__stat">
+          <div class="profile__icon profile__icon--blue"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+          <div class="profile__value"><%=currentUser.email %>
+            <div class="profile__key">Email</div>
+          </div>
+        </div>
+        <div class="profile__stat">
+          <div class="profile__icon profile__icon--pink"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+          <div class="profile__value"><%=currentUser.entity %>
+            <div class="profile__key">Entity</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h1 class="mb-4">Blog Articles</h1>
+    <a href="/blog/new" class="btn btn-success">New Article</a>
+    <div class="row">
+      <% posts.forEach(post => { %> 
+      <div class="col-3 col-m-6 col-sm-6">
+        <div class="counter bg-primary">
+          <h4 class="card-title"><%= post.title %></h4>
+          <div class="card-subtitle text-muted mb-2">
+            <strong><%= post.createdAt.toLocaleDateString() %></strong>
+          </div>
+          <div class="card-text mb-2"><%= post.content.slice(0, 150) %>...</div>
+          <a class="btn" href="/blog/<%= post._id %>"
+            >Read More <i class="angle double right icon"></i
+          ></a>
+        </div>
+      </div>
+       <% }) %>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer'); -%>

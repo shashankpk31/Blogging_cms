@@ -1,0 +1,40 @@
+<% include ../partials/header.ejs %>
+
+<div id="new-content" class="center-align container">
+  <h1>Add a new Comment on <%= post.title %></h1>
+  <div class="row center-align add-new-container">
+    <form action="/blog/<%= post._id %>/comment" method="POST" class="form">
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="name" id="label" 
+            >Name  <i class="fas fa-address-book"></i></label
+          >
+          <input type="text" name="name" id="input" value="<%=currentUser.username  %> " />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="newComment" id="label"
+            >Comment  <i class="fas fa-comment"></i></label
+          >
+
+          <textarea
+            name="comment"
+            id="input"
+            class="materialize-textarea"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <button class="btn waves-effect waves-light">
+            Submit<i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>

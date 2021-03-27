@@ -1,0 +1,24 @@
+<% include ../partials/header.ejs %>
+
+
+<div class="container center-align">
+  <div class="loginSignup-container">
+    <% if (currentUser) { %>
+      <form action="/editPass/<%= currentUser._id %> " method="POST" id="form">
+        <h2>Edit your Password </h2>
+        <label for="Oldpass" id="label"></label>
+        <input type="password" name="Oldpassword" value="" placeholder="Old password" id="input"/>
+        <label for="newpass" id="label"></label>
+        <input type="password" name="newpassword" value="" placeholder="new password" id="input"/>
+        <label for="Oldpass" id="label"></label>
+        <input type="password" name="conpassword" value="" placeholder="confirm password" id="input"/>
+        <button class="btn">Submit</button>
+      </form>
+      <% } else { %>
+      <h1>Welcome to my page</h1>
+      <% } %>
+    
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>

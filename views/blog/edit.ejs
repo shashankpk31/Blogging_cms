@@ -1,0 +1,37 @@
+<% include ../partials/header.ejs %>
+
+<div id="new-content" class="center-align">
+  <h1>Edit the Blog Post</h1>
+  <div class="row center-align add-new-container">
+    <form
+      action="/blog/<%= post._id %>?_method=PUT"
+      method="POST"
+      class="col s12"
+    >
+      <div class="input-field col s12">
+        <label for="updateTitle" id="label">Title</label>
+        <input type="text" name="title" id="input" value="<%= post.title %>" />
+      </div>
+
+      <div class="input-field col s12">
+        <label for="updateImage" id="label">Image Link</label>
+        <input type="text" name="image" id="input" value="<%= post.image %>" />
+      </div>
+
+      <div class="input-field col s12">
+        <label for="updateContent" id="label">Content</label>
+        <textarea name="content" id="input" class="materialize-textarea">
+<%= post.content %></textarea
+        >
+      </div>
+
+      <div class="input-field col s12">
+        <button class="btn waves-effect waves-light">
+          Update
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,23 @@
+<% include ../partials/header.ejs %>
+
+<div class="container center-align">
+  <div class="loginSignup-container">
+  
+    <form action="/edituser/<%= user._id  %> " method="POST" id="form">
+      <h2>Edit your Detail</h2>
+      <label for="username" id="label"></label>
+      <input type="text" name="username" value="<%=user.username  %> " placeholder="Username" id="input"/>
+      <label for="email" id="label"></label>
+      <input type="text" name="email" value="<%=user.email  %> " placeholder="email" id="input" />
+      <label for="Age" id="label"></label>
+      <input type="number" name="Age" placeholder="Age" value="<%= user.Age  %> " id="input" />
+      <label for="entity" id="label"></label>
+      <input type="text" name="entity" value="<%=user.entity  %> " placeholder="entity" id="input" />
+      <label for="image" id="label"></label>
+      <input type="text" name="image" value="<%=user.image  %> " placeholder="image link" id="input" />
+      <button class="btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>

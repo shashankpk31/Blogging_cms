@@ -1,0 +1,21 @@
+<% include ../partials/header.ejs %>
+
+<div class="container center-align">
+  <div class="loginSignup-container">
+    <form action="/login" method="POST" id="form">
+      <h2>Login</h2>
+      <label for="username" id="label"></label>
+      <input type="text" name="username" placeholder="Username" id="input" />
+      <label for="password" id="label"></label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        id="input"
+      />
+      <button class="btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>
