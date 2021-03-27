@@ -15,6 +15,7 @@
 - Basic Nodejs How to use nodejs and npm.
 - Learnt ajax requests by using Express.
 - Basic Authentication system by Passportjs.
+- Important concepts like Cookies, Json-web-token(jwt),Express-sesssion,bcrypt like libarys.
 - Basic Express Model-view-Controller(mvc) Model.
 - Basic Commenting system on an application.
 - Using Static files by public and template engine.
