@@ -10,7 +10,7 @@
  - Admin have all permission like Edit Users Details and Delete A user .
  - User have there Profile pages.
 
-## Skills i learned Through this project
+## Skills i learned Through this project.
 -Mongodb (data manipulation , Mongodb Atlas, Mongodb Population ,referencing collection etc;).
 -Basic Nodejs How to use nodejs and npm.
 -Learnt ajax requests by using Express.
