@@ -9,7 +9,16 @@
  - Admin can manage Blogs and Users.
  - Admin have all permission like Edit Users Details and Delete A user .
  - User have there Profile pages.
-  
+
+## Skills i learned Through this project
+-Mongodb (data manipulation , Mongodb Atlas, Mongodb Population ,referencing collection etc;).
+-Basic Nodejs How to use nodejs and npm.
+-Learnt ajax requests by using Express.
+-Basic Authentication system by Passportjs.
+-Basic Express Model-view-Controller(mvc) Model.
+-Basic Commenting system on an application.
+-Using Static files by public and template engine.
+
 ## Important Images With Title Here 
 
 ![Getting Started](./public/images/DashboardAdmin.png)
