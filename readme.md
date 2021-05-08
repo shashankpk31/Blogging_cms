@@ -20,6 +20,14 @@
 - Basic Commenting system on an application.
 - Using Static files by public and template engine.
 
+## Authentication system explain.
+When the user performs a sign in, this is what happens:
+
+- The client sends a pair of Public Identification and a Private key, usually an email and a password
+- The server looks for the user in the database using the email.
+- If the user exists in the database, the server hashes the sent password and compares it to the stored hashed password
+- If the password is valid, it emits a JSON Web Token (or JWT)
+
 ## Important Images With Title Here 
 
 ![Getting Started](./public/images/DashboardAdmin.png)
