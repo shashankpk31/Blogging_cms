@@ -59,7 +59,7 @@ app.get("/profile", middleware.checkLoggedIn, (req, res) => {
   });
 });
 mongoose.connect(
-  "mongodb+srv://shashank:shashank8090@cluster0.wzrgn.mongodb.net/blogexample",
+   "mongodb://localhost:27017/blogexample",
   { useNewUrlParser: true }
 );
 
